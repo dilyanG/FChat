@@ -1,0 +1,11 @@
+<p-tabView *ngIf="userService.loggedUser">
+    <p-tabPanel header="Family">
+        <app-group [groupType]="groupType.Family"></app-group>
+    </p-tabPanel>
+    <p-tabPanel header="Friends">
+        <app-group [groupType]="groupType.Friends"></app-group>
+    </p-tabPanel>
+    <p-tabPanel header="Work">
+        <app-group [groupType]="groupType.Work"></app-group>
+    </p-tabPanel>
+</p-tabView>

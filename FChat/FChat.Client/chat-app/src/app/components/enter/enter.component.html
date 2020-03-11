@@ -1,0 +1,8 @@
+<div>
+    <h2>Welcome to the chat!</h2>
+    <div class="ui-g">
+        <label>Name</label>
+        <input pInputText type="text" [(ngModel)]="user.name" required>
+    </div>
+    <button type="button" [disabled]="!user.name" pButton icon="pi pi-check" (click)="enter()" label="Enter"></button>
+</div>
