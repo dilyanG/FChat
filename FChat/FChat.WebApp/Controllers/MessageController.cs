@@ -56,8 +56,10 @@ namespace FChat.WebApp.Controllers
         // POST: api/Message
         [HttpPost]
         [Route("add")]
-        public OkResult AddMessage([FromBody] MessageViewModel message)
+        public StatusCodeResult AddMessage([FromBody] MessageViewModel message)
         {
+            if (message == null) return BadRequest();
+
             messageService.AddMessage(mapper.Map<MessageEntity>(message));
             return Ok();
         }

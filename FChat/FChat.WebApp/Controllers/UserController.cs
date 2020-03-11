@@ -60,10 +60,11 @@ namespace FChat.WebApp.Controllers
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
         [Route("enter")]
-        public OkObjectResult EnterUser(UserViewModel userModel)
+        public ObjectResult EnterUser(UserViewModel userModel)
         {
+            if (userModel == null) return new BadRequestObjectResult(ModelState);
             UserEntity entity = mapper.Map<UserEntity>(userModel);
-
+            
             if (this.userService.GetByName(entity.Name) == null)
                 this.userService.AddUser(entity);
             return new OkObjectResult(mapper.Map<UserViewModel>(this.userService.GetByName(userModel.Name)));
