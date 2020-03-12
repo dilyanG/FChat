@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 
 import { GroupType } from 'src/assets/enums';
 import { MessageService } from 'src/app/services/message.service';
@@ -12,10 +11,11 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.css']
 })
-export class GroupComponent implements OnInit {
+export class GroupComponent implements OnInit, OnDestroy {
 
   @Input() groupType: GroupType;
 
+  intervalId: any;
   messages: MessageModel[] = [];
 
   userId: number = 0;
@@ -33,7 +33,7 @@ export class GroupComponent implements OnInit {
       res => {
         if (res) {
           this.messages = res;
-          setInterval(() => {
+          this.intervalId = setInterval(() => {
             this.syncMessages();
           }, 2000);
         }
@@ -69,6 +69,11 @@ export class GroupComponent implements OnInit {
           }
         }
       )
+  }
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
 }
