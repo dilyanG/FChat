@@ -16,12 +16,14 @@ namespace FChat.DataService.Services
 
         public void AddUser(UserEntity user)
         {
+            if (user == null) throw new ArgumentNullException();
             this.DataAccessService.UserRepository.Add(user);
             
         }
 
         public bool CheckUser(string name)
         {
+            if (String.IsNullOrEmpty(name)) return false;
             return this.DataAccessService.UserRepository.CheckUser(name);
         }
 
@@ -32,6 +34,7 @@ namespace FChat.DataService.Services
 
         public UserEntity GetByName(string name) 
         {
+            if (String.IsNullOrEmpty(name)) return null;
             return this.DataAccessService.UserRepository.GetByName(name);
         }
         public UserEntity GetById(int id)

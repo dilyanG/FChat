@@ -16,6 +16,7 @@ namespace FChat.DataService.Services
 
         public void AddMessage(MessageEntity message)
         {
+            if (message == null) throw new ArgumentNullException();
             this.DataAccessService.MessageRepository.Add(message);
         }
 
