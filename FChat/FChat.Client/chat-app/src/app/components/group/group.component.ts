@@ -48,6 +48,7 @@ export class GroupComponent implements OnInit, OnDestroy {
     messageObject.message = this.newMessage;
     this.messageService.sendMessage(messageObject).subscribe(
       res => {
+        messageObject.createdOn = new Date().toLocaleString();
         this.messages = [...this.messages, messageObject];
         this.newMessage = null;
         this.lastMessage = new Date().toLocaleString();
