@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChat.WebApp", "FChat.WebApp\FChat.WebApp.csproj", "{E2A64E1A-F0FF-4EED-A6A1-C0CC0791179D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FChat.WebApp", "FChat.WebApp\FChat.WebApp.csproj", "{E2A64E1A-F0FF-4EED-A6A1-C0CC0791179D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChat.DataModel", "FChat.DataModel\FChat.DataModel.csproj", "{A0D67890-A9DF-4C25-B6E2-8C6B8A51B900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FChat.DataModel", "FChat.DataModel\FChat.DataModel.csproj", "{A0D67890-A9DF-4C25-B6E2-8C6B8A51B900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChat.DataAccess", "FChat.DataAccess\FChat.DataAccess.csproj", "{E33CE869-603E-48A5-8A13-7CCB5E618B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FChat.DataAccess", "FChat.DataAccess\FChat.DataAccess.csproj", "{E33CE869-603E-48A5-8A13-7CCB5E618B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChat.DataService", "FChat.DataService\FChat.DataService.csproj", "{F45FDC2D-5506-46F1-8B2C-E7DA9D3830D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FChat.DataService", "FChat.DataService\FChat.DataService.csproj", "{F45FDC2D-5506-46F1-8B2C-E7DA9D3830D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChat.Testing", "TestingFChat\FChat.Testing.csproj", "{70F5F3D5-2D96-45E5-91D9-D71271E8D0B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F45FDC2D-5506-46F1-8B2C-E7DA9D3830D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F45FDC2D-5506-46F1-8B2C-E7DA9D3830D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F45FDC2D-5506-46F1-8B2C-E7DA9D3830D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F5F3D5-2D96-45E5-91D9-D71271E8D0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F5F3D5-2D96-45E5-91D9-D71271E8D0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F5F3D5-2D96-45E5-91D9-D71271E8D0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F5F3D5-2D96-45E5-91D9-D71271E8D0B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -9,6 +10,7 @@ using FChat.DataService.Interfaces;
 using FChat.DataService.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
 
 namespace FChat.WebApp.Controllers
 {
@@ -46,19 +48,13 @@ namespace FChat.WebApp.Controllers
             return null;
         }
 
-        // GET: api/Message/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST: api/Message
         [HttpPost]
         [Route("add")]
         public StatusCodeResult AddMessage([FromBody] MessageViewModel message)
         {
-            if (message == null) return BadRequest();
+            if (message==null || !Validator.TryValidateObject(message, new ValidationContext(message), new List<ValidationResult>())) return BadRequest();
 
             messageService.AddMessage(mapper.Map<MessageEntity>(message));
             return Ok();

@@ -20,7 +20,6 @@ namespace FChat.WebApp.Controllers
         private readonly IUserService userService;
         private readonly IMapper mapper;
 
-
         public UserController(IUserService userService, IMapper mapper)
         {
             this.userService = userService;
@@ -62,7 +61,7 @@ namespace FChat.WebApp.Controllers
         [Route("enter")]
         public ObjectResult EnterUser(UserViewModel userModel)
         {
-            if (userModel == null) return new BadRequestObjectResult(ModelState);
+            if (!ModelState.IsValid) return new BadRequestObjectResult(ModelState);
             UserEntity entity = mapper.Map<UserEntity>(userModel);
             
             if (this.userService.GetByName(entity.Name) == null)
